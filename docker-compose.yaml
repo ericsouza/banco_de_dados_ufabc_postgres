@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  postgres-ufabc:
+    image: postgres
+    env_file:
+      - database.env
+    ports:
+      - "5432:5432"
+    volumes:
+      - $PWD/postgres_data:/var/lib/postgresql/data
+      - $PWD/queries:/queries
+      
+  teste-pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@email.com"
+      PGADMIN_DEFAULT_PASSWORD: "admin123"
+    ports:
+      - "16543:80"
+    depends_on:
+      - postgres-ufabc
