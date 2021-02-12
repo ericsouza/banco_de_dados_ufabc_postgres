@@ -18,7 +18,7 @@ Então execute:
 docker-compose up
 ```
 
-E tanto o banco de dados quanto o pgAdmin4 irão subir. Depois pasta acessar a o pgAdmin4 pelo browser na url: http://127.0.0.1:16543
+Tanto o banco de dados quanto o pgAdmin4 irão subir. Depois basta acessar a o pgAdmin4 pelo browser na url: http://127.0.0.1:16543
 
 ## Criando tabelas e inserindo dados
 
