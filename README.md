@@ -22,7 +22,7 @@ Tanto o banco de dados quanto o pgAdmin4 irão subir. Depois basta acessar a o p
 
 ## Criando tabelas e inserindo dados
 
-O docker-compose.yaml cria o colume necessário para persistência dos dados mas também um volume para acessar os scripts de criação e deleção do database.
+O docker-compose.yaml cria o volume necessário para persistência dos dados mas também um volume para acessar os scripts de criação e deleção do database.
 
 Primeiro acesse o container do banco de dados:
 
@@ -34,12 +34,12 @@ Então poderá prosseguir para os comandos do psql:
 
 ### Inserindo dados:
 ```bash
-psql -U admin -d ufabc_database -a -f cria_db.sql
+psql -U admin -d ufabc_database -a -f queries/cria_db.sql
 ```
 
 ### Apagando dados:
 ```bash
-psql -U admin -d ufabc_database -a -f apaga_db.sql
+psql -U admin -d ufabc_database -a -f queries/apaga_db.sql
 ```
 
 
