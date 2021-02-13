@@ -10,13 +10,21 @@ services:
     volumes:
       - $PWD/postgres_data:/var/lib/postgresql/data
       - $PWD/queries:/queries
+    networks:
+      - postgres-ufabc-network
       
-  teste-pgadmin-compose:
+  pgadmin-ufabc:
     image: dpage/pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: "admin@email.com"
       PGADMIN_DEFAULT_PASSWORD: "admin123"
     ports:
       - "16543:80"
+    networks:
+      - postgres-ufabc-network
     depends_on:
       - postgres-ufabc
+
+networks: 
+  postgres-ufabc-network:
+    driver: bridge
